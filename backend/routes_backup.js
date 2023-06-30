@@ -2,7 +2,7 @@ const express= require('express');
 
 const router = express.Router();
 
-const Employee = require('./employee.js');
+const Employee = require('../models/Employee');
 
 const ObjectId = require('mongoose').Types.ObjectId;
 
