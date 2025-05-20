@@ -1,13 +1,17 @@
 const express = require('express');
-const mongoose= require('./db.js');
+const mongoose = require('./db.js');
+require('dotenv').config();
 
 // old import route code
 // const routes = require('./routes.js');
 
 // import route
-const employeeRoutes=require("./routes/employee");
+const employeeRoutes = require("./routes/employee");
+
+const errorHandler = require('./middlewares/errorHandler.js');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -17,5 +21,8 @@ app.use('/api/employees',employeeRoutes);
 // old route code
 // app.use('/employees',routes);
 
-app.listen(4000,() => console.log('server started at port 4000'));
+// Central error handler (should be last middleware)
+app.use(errorHandler);
+
+app.listen(PORT,() => console.log(`server started at port ${PORT}`));
 
