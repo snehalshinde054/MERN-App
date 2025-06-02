@@ -8,6 +8,9 @@ require('dotenv').config();
 // import route
 const employeeRoutes = require("./routes/employee");
 
+//import auth routes
+const authRoutes = require('./routes/auth.js');
+
 const errorHandler = require('./middlewares/errorHandler.js');
 
 const app = express();
@@ -17,6 +20,7 @@ app.use(express.json());
 
 // route middleware
 app.use('/api/employees',employeeRoutes);
+app.use('/api/auth',authRoutes);
 
 // old route code
 // app.use('/employees',routes);
