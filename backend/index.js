@@ -16,10 +16,15 @@ const errorHandler = require('./middlewares/errorHandler.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const { swaggerUi, swaggerSpec } = require('./config/swagger.js');
+
+//swagger route 
+app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerSpec));
+
 app.use(express.json());
 
 // route middleware
-app.use('/api/employees',employeeRoutes);
+app.use('/api/employee',employeeRoutes);
 app.use('/api/auth',authRoutes);
 
 // old route code
