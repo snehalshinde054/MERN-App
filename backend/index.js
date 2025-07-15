@@ -33,5 +33,12 @@ app.use('/api/auth',authRoutes);
 // Central error handler (should be last middleware)
 app.use(errorHandler);
 
-app.listen(PORT,() => console.log(`server started at port ${PORT}`));
+// Only start server if not in test mode
+let server;
 
+if(process.env.NODE_ENV!=='test'){
+    server = app.listen(PORT,() => console.log(`server started at port ${PORT}`));
+}
+
+// Export app and optionally server (supertest uses app)
+module.exports = app;
