@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('./db.js');
+const cors = require('cors');
 require('dotenv').config();
 
 // old import route code
@@ -22,6 +23,11 @@ const { swaggerUi, swaggerSpec } = require('./config/swagger.js');
 app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerSpec));
 
 app.use(express.json());
+
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true // if you're using cookies or auth headers
+}));
 
 // route middleware
 app.use('/api/employee',employeeRoutes);
