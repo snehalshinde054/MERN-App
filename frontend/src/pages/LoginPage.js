@@ -15,6 +15,7 @@ const LoginPage = () => {
         try{
             const res = await axios.post('/auth/login',form);
             localStorage.setItem('token',res.data.data.token);
+            localStorage.setItem('user', JSON.stringify(res.data.data.user));
             alert('Login Successfully!');
             navigate('/dashboard');
 
