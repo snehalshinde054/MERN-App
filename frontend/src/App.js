@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute';
 
 import Navbar from './components/Navbar';
 import LoginPage from './pages/LoginPage';
@@ -12,8 +13,8 @@ function App() {
   return (
         <Router>
           <Navbar />
-          <Routes>
-            <Route path='/' element={< EmployeeList />} />
+          <Routes> 
+            <Route path='/' element={<PrivateRoute>< EmployeeList /></PrivateRoute>} />
             <Route path='/login' element={<LoginPage />} />
             <Route path='/register' element={< RegisterPage />} />
             <Route path='/dashboard' element={< Dashboard />} />
