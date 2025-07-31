@@ -2,7 +2,7 @@
 
 ### 💻 Senior Software Developer | Backend Specialist | PHP | Laravel | Node.js | React.js
 
-I'm a passionate and result-oriented developer with **7+ years of experience** in building scalable, secure, and high-performing web applications. My core strength lies in **backend development** using **PHP (Laravel, CodeIgniter)** and modern **JavaScript technologies** like **Node.js** and **React.js**.
+I'm a passionate and result-oriented developer with **6+ years of experience** in building scalable, secure, and high-performing web applications. My core strength lies in **backend development** using **PHP (Laravel, CodeIgniter)** and modern **JavaScript technologies** like **Node.js** and **React.js**.
 
 ---
 
